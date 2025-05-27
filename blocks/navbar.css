@@ -13,6 +13,7 @@
     border: none;
     text-decoration: none;
     cursor: pointer;
+    color: black;
 }
 
 .navbar__link:hover {
