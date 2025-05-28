@@ -1,11 +1,15 @@
+import { NavLink } from 'react-router-dom';
+
 import Navigation from "../Navigation/Navigation";
 
 function Header () {
     
     return (
         <div className='header'>
+            <NavLink to="/">
                 <img className="header__logo" src="../../images/INPUT BLK.png" alt="INPUT LOGO" />
-                <div className="header__nav"><Navigation/></div>
+            </NavLink>               
+            <div className="header__nav"><Navigation/></div>
         </div>
     );
 };

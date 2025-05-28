@@ -3,6 +3,7 @@ import { Routes, Route, Navigate, useNavigate } from "react-router-dom";
 
 import Header from "./Header/Header";
 import Main from "./Main/Main";
+import Work from "./Work/Work";
 import Footer from "./Footer/Footer";
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={ <Main/> }/>
-        <Route path="/work" />
+        <Route path="/work" element={ <Work/> } />
         <Route path="/studio" />
       </Routes>
       
