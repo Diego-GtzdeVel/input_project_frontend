@@ -2,7 +2,7 @@ function Footer() {
     return (
         <div className="footer">
             <img className="footer__logo" src="../../images/INPUT WHITE.png" alt="Footer Logo" />
-            <p className="footer__text">- GRACIAS POR VISITARNOS</p>
+            <p className="footer__text">- THANKS FOR CHEKING IN</p>
             <ul className="footer__social">
                 <li className="footer__social-text">SOCIALS:</li>
                 <li><a className="footer__social-link" href="#">INSTAGRAM</a></li>

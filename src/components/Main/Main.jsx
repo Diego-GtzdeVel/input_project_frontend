@@ -1,6 +1,8 @@
-function Main() {
+import Popup from "../Popup/Popup";
+
+function Main({onClosePopup, popup}) {
     return(
-        <div className="main">
+        <main className="main">
             <div className="main__content">
                 <div className="main__text">
                     <h1 className="main__title">WE ARE A BRANDING STUDIO FOR PEOPLE LOOKING TO SCREAM THEIR IDEAS</h1>
@@ -8,7 +10,12 @@ function Main() {
                 </div>
             <img className="main__image" src="../../images/image1.png" alt="imagen" />
             </div>
-        </div>
+            {popup && (
+                <Popup onClose={onClosePopup} title={popup.title}>
+                    {popup.children}
+                </Popup>
+            )}
+        </main>
     );
 }
 
