@@ -5,6 +5,7 @@ import Header from "./Header/Header";
 import Main from "./Main/Main";
 import Work from "./Work/Work";
 import Studio from "./Studio/Studio";
+import Account from "./Account/Account";
 import Footer from "./Footer/Footer";
 
 function App() {
@@ -49,6 +50,12 @@ function App() {
             onClosePopup={handleClosePopup}
             popup={popup}
             /> 
+          }
+        />
+        <Route 
+          path="/account" 
+          element={ 
+            <Account /> 
           }
         />
       </Routes>

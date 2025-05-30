@@ -17,15 +17,15 @@ function Work({onClosePopup, popup}) {
                 </div>
                 <div className="work__grid-project">
                     <img className="work__grid-project-image" src="../../images/work2.png" alt="" />
-                    <p className="work__grid-project-text">DISEÑO DE BADGE</p>
+                    <p className="work__grid-project-text">BADGE DESIGN</p>
                 </div>
                 <div className="work__grid-project">
                     <img className="work__grid-project-image" src="../../images/work3.png" alt="" />
-                    <p className="work__grid-project-text">DISEÑO DE EMPAQUE</p>
+                    <p className="work__grid-project-text">PACKAGING DESIGN</p>
                 </div>
                 <div className="work__grid-project">
                     <img className="work__grid-project-image" src="../../images/work4.png" alt="" />
-                    <p className="work__grid-project-text">GRAFICOS VISUALES</p>
+                    <p className="work__grid-project-text">VISUAL GRAPHICS</p>
                 </div>
             </div>
             </div>
