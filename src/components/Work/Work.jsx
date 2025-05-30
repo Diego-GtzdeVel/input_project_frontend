@@ -6,7 +6,7 @@ function Work({onClosePopup, popup}) {
             <h1 className="work__heading">OUR WORK</h1>
             <div className="work__content">
                 <div className="work__project">
-                <img className="wor__project-image" src="../../images/Booster Logo.png" alt="Project-001" />
+                <img className="work__project-image" src="../../images/Booster Logo.png" alt="Project-001" />
                 <h2 className="work__project-title">BOOSTER MOTORSPORT</h2>
                 <p className="work__project-description">Branding project for "Booster Motorsport," a clothing brand inspired by motorsports and the love of cars, a design inspired by the automotive industry and the great motorsports teams.</p>
             </div>

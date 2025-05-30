@@ -4,11 +4,13 @@ function Login() {
         <>
         <form className="popup__form">
             <input
+                id="email"
                 type="email"
                 placeholder="EMAIL"
                 className="popup__input"
                 required />
             <input
+                id="password"
                 type="password"
                 placeholder="PASSWORD"
                 className="popup__input"

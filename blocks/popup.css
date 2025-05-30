@@ -19,7 +19,18 @@
   width: 440px;
   height: 450px;
   border-radius: 10px;
+}
+
+.popup__close {
+  display: flex;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
   position: relative;
+  left: 240px;
+  bottom: 40px;
 }
 
 .popup__title {
@@ -77,4 +88,38 @@
     font-size: 12px;
     line-height: 1.2;
     color: #ffffff;
+}
+
+@media screen and (max-width: 544px) {
+
+  .popup__container{
+    width: 300px;
+    height: 380px;
+  }
+
+  .popup__close{
+    width: 30px;
+    height: 30px;
+    left: 150px;
+  }
+
+  .popup__title{
+    font-size: 24px;
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 70px;
+  }
+
+  .popup__input{
+    width: 240px;
+    font-size: 14px;
+  }
+
+  .popup__button{
+    width: 240px;
+  }
+
+  .popup__redirect{
+    font-size: 10px;
+  }
 }

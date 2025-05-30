@@ -23,3 +23,17 @@
 .navbar__link:selected{
     font-weight: bold;
 }
+
+
+@media screen and (max-width:544px) {
+    .navbar{
+        width: 300px;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .navbar__link{
+        font-size: 10px;
+        width: 50px;
+    }
+}

@@ -52,3 +52,13 @@
     font-weight: bold;
     line-height: 1.2;
 }
+
+@media screen and (max-width: 544px) {
+    .studio__about{
+        font-size: 14px;
+    }
+
+    .studio__contact-email{
+        font-size: 20px;
+    }
+}

@@ -36,3 +36,42 @@
     width: 530px;
     height: 530px;
 }
+
+@media screen and (max-width: 1024px) {
+    .main{
+        width: 95%;
+        height: 1100px;
+    }
+
+    .main__content{
+        flex-direction: column;
+        margin-top: 50px;
+        gap: 100px;
+    }
+}
+
+@media screen and (max-width: 544px) {
+
+    .main{
+        height: 900px;
+    }
+
+    .main__text{
+        width: 300px;
+    }
+
+    .main__title{
+        width: 300px;
+        font-size: 24px;
+    }
+
+    .main__subtitle{
+        width: 300px;
+        font-size: 24px;
+    }
+
+    .main__image{
+        width: 300px;
+        height: 300px;
+    }
+}

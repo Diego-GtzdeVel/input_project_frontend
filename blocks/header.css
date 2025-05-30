@@ -21,3 +21,16 @@
     width: 480px;
     height: 20px;
 }
+
+
+@media screen and (max-width: 544px) {
+    .header{
+        flex-direction: column;
+        height: 100px;
+        gap: 20px;
+    }
+
+    .header__nav{
+        width: 300px;
+    }
+}
