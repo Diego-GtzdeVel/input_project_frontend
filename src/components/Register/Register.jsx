@@ -1,4 +1,4 @@
-function Login({ onSwitch }) {
+function Register({ onSwitch }) {
   return (
     <>
       <form className="popup__form">
@@ -17,22 +17,22 @@ function Login({ onSwitch }) {
           required
         />
         <button type="submit" className="popup__button">
-          LOGIN
+          REGISTER
         </button>
       </form>
 
       <p className="popup__redirect">
-        IF YOU ARE NOT YET A MEMBER...{" "}
+        ALREADY HAVE AN ACCOUNT?{" "}
         <button
           type="button"
           className="popup__link"
           onClick={onSwitch}
         >
-          REGISTER HERE
+          LOGIN HERE
         </button>
       </p>
     </>
   );
 }
 
-export default Login;
+export default Register;

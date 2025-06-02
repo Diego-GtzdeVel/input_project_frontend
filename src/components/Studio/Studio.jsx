@@ -18,11 +18,6 @@ function Studio({onClosePopup, popup}) {
                 <h3 className="studio__contact-header">CONTACT</h3>
                 <p className="studio__contact-email">EMAIL: HELLO.INPUT@GMAIL.COM</p>
             </div>
-            {popup && (
-                <Popup onClose={onClosePopup} title={popup.title}>
-                    {popup.children}
-                </Popup>
-            )}
         </div>
     );
 

@@ -6,17 +6,18 @@ import Main from "./Main/Main";
 import Work from "./Work/Work";
 import Studio from "./Studio/Studio";
 import Account from "./Account/Account";
+import Popup from "./Popup/Popup";
 import Footer from "./Footer/Footer";
 
 function App() {
-  const [popup, setPopup] = useState(null);
+  const [popupMode, setPopupMode] = useState(null);
 
-  function handleOpenPopup(popup) {
-    setPopup(popup);
+  function handleOpenPopup(mode) {
+    setPopupMode(mode);
   }
 
   function handleClosePopup() {
-    setPopup(null);
+    setPopupMode(null);
   }
 
 
@@ -30,7 +31,7 @@ function App() {
           element={ 
             <Main 
             onClosePopup={handleClosePopup}
-            popup={popup}
+            popupMode={popupMode}
             /> 
           }
         />
@@ -39,7 +40,7 @@ function App() {
           element={ 
             <Work 
             onClosePopup={handleClosePopup}
-            popup={popup}
+            popupMode={popupMode}
             /> 
           }
         />
@@ -48,7 +49,7 @@ function App() {
           element={ 
             <Studio 
             onClosePopup={handleClosePopup}
-            popup={popup}
+            popupMode={popupMode}
             /> 
           }
         />
@@ -59,6 +60,10 @@ function App() {
           }
         />
       </Routes>
+
+      {popupMode && (
+        <Popup mode={popupMode} onClose={handleClosePopup} />
+      )}
       
       <Footer/>
     </div>

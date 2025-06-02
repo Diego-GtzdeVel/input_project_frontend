@@ -1,5 +1,3 @@
-import Popup from "../Popup/Popup";
-
 function Main({onClosePopup, popup}) {
     return(
         <main className="main">
@@ -10,11 +8,6 @@ function Main({onClosePopup, popup}) {
                 </div>
             <img className="main__image" src="../../images/image1.png" alt="imagen" />
             </div>
-            {popup && (
-                <Popup onClose={onClosePopup} title={popup.title}>
-                    {popup.children}
-                </Popup>
-            )}
         </main>
     );
 }

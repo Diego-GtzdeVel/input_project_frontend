@@ -1,6 +1,23 @@
-import Popup from "../Popup/Popup";
+import { useEffect, useState } from "react";
+import unsplashApi from "../../../utils/UnsplashApi";
 
-function Work({onClosePopup, popup}) {
+function Work() {
+    const [images, setImages] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+    setLoading(true);
+    unsplashApi.fetchWorkImages()
+      .then((imgs) => {
+        setImages(imgs);
+      })
+      .catch((err) => {
+        console.error(err);
+        setImages([]);
+      })
+      .finally(() => setLoading(false));
+  }, []);
+
     return (
         <div className="work">
             <h1 className="work__heading">OUR WORK</h1>
@@ -11,29 +28,22 @@ function Work({onClosePopup, popup}) {
                 <p className="work__project-description">Branding project for "Booster Motorsport," a clothing brand inspired by motorsports and the love of cars, a design inspired by the automotive industry and the great motorsports teams.</p>
             </div>
             <div className="work__grid">
-                <div className="work__grid-project">
-                    <img className="work__grid-project-image" src="../../images/work1.png" alt="" />
-                    <p className="work__grid-project-text">3D LOGO</p>
-                </div>
-                <div className="work__grid-project">
-                    <img className="work__grid-project-image" src="../../images/work2.png" alt="" />
-                    <p className="work__grid-project-text">BADGE DESIGN</p>
-                </div>
-                <div className="work__grid-project">
-                    <img className="work__grid-project-image" src="../../images/work3.png" alt="" />
-                    <p className="work__grid-project-text">PACKAGING DESIGN</p>
-                </div>
-                <div className="work__grid-project">
-                    <img className="work__grid-project-image" src="../../images/work4.png" alt="" />
-                    <p className="work__grid-project-text">VISUAL GRAPHICS</p>
-                </div>
+                {loading ? (
+                <i className="circle-preloader"></i>
+                ) : (
+                images.map((img) => (
+                    <div key={img.id} className="work__grid-project">
+                    <img
+                        className="work__grid-project-image"
+                        src={img.url}
+                        alt={img.title}
+                    />
+                    <p className="work__grid-project-text">{img.title}</p>
+                    </div>
+                ))
+                )}
             </div>
             </div>
-            {popup && (
-                <Popup onClose={onClosePopup} title={popup.title}>
-                    {popup.children}
-                </Popup>
-            )}
         </div>
     );
 };
