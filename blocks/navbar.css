@@ -1,0 +1,39 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    max-width: 480px;
+    max-height: 20px;
+    gap: 70px;
+}
+
+.navbar__link {
+    width: 70px;
+    height: 20px;
+    background: none;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    color: black;
+}
+
+.navbar__link:hover {
+    color: #6E6E6E;
+}
+
+.navbar__link:selected{
+    font-weight: bold;
+}
+
+
+@media screen and (max-width:544px) {
+    .navbar{
+        width: 300px;
+        align-items: center;
+        gap: 40px;
+    }
+
+    .navbar__link{
+        font-size: 10px;
+        width: 50px;
+    }
+}

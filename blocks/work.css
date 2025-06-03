@@ -1,0 +1,130 @@
+.work{
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    height: 900px;
+    margin: 0;
+    padding: 0;
+}
+
+.work__heading{
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.work__content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.work__project{
+    display: flex;
+    flex-direction: column;
+    width: 380px;
+    height: 550px;
+    gap: 25px;
+}
+
+.work__project-image{
+    width: 380px;
+    height: 380px;
+}
+
+.work__project-title{
+    font-size: 36px;
+    line-height: 1.2;
+    width: 380px;
+    height: 44px;
+}
+
+.work__project-description{
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.work__grid {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 110px;
+    row-gap: 45px;
+}
+
+.work__grid-project-image{
+    width: 300px;
+    height: 300px;
+}
+
+.work__grid-project-text{
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: bold;
+    justify-self: center;
+}
+
+@media screen and (max-width: 1024px) {
+    .work{
+        height: 1100px;
+    }
+    .work__content{
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 25px;
+    }
+
+    .work__project{
+        width: 740px;
+        height: 400px;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    .work__project-title{
+        font-size: 24px;
+    }
+
+    .work__project-image{
+        width: 250px;
+        height: 250px;
+    }
+
+    .work__grid{
+        row-gap: 25px;
+    }
+
+    .work__grid-project-image{
+        width: 200px;
+        height: 200px;
+    }
+
+    .work__grid-project-text{
+        font-size: 16px;
+    }
+
+}
+@media screen and (max-width: 544px) {
+    .work{
+        height: 1650px;
+    }
+    .work__project{
+        width: 300px;
+    }
+
+    .work__project-title{
+        width: 300px;
+        font-size: 20px;
+    }
+
+    .work__project-description{
+        width: 300px;
+        font-size: 12px;
+    }
+
+    .work__grid{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+}

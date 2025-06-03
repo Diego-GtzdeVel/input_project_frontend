@@ -1,0 +1,36 @@
+.header {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    height: 80px;
+    border-bottom: 2px solid rgba(0, 0, 0);
+    margin-top: 27px;
+    padding-bottom: 20px;
+    justify-content: space-between;
+}
+
+.header__logo {
+    max-width: 117px;
+    max-height: 60px;
+    align-self: flex-start;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    width: 480px;
+    height: 20px;
+}
+
+
+@media screen and (max-width: 544px) {
+    .header{
+        flex-direction: column;
+        height: 100px;
+        gap: 20px;
+    }
+
+    .header__nav{
+        width: 300px;
+    }
+}
