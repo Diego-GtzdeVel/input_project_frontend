@@ -2,7 +2,7 @@ import { NavLink } from 'react-router-dom';
 
 import Navigation from "../Navigation/Navigation";
 
-function Header ({onOpenPopup}) {
+function Header ({onOpenPopup, isLoggedIn, onSignOut}) {
     
     return (
         <div className='header'>
@@ -10,7 +10,7 @@ function Header ({onOpenPopup}) {
                 <img className="header__logo" src="../../images/INPUT BLK.png" alt="INPUT LOGO" />
             </NavLink>               
             <div className="header__nav">
-                <Navigation onOpenPopup={onOpenPopup}/>
+                <Navigation onOpenPopup={onOpenPopup} isLoggedIn={isLoggedIn} onSignOut={onSignOut}/>
             </div>
         </div>
     );

@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Login from "../Login/Login";
 import Register from "../Register/Register"
 
-function Popup({ mode, onClose }) {
+function Popup({ mode, onClose, onRegister, onLogin }) {
   const [currentMode, setCurrentMode] = useState(mode);
 
   useEffect(() => {
@@ -27,8 +27,8 @@ function Popup({ mode, onClose }) {
                 {currentMode === "login" ? "LOGIN" : "REGISTER"}
               </h3>
 
-              {currentMode === "login" && <Login onSwitch={switchToRegister} />}
-              {currentMode === "register" && <Register onSwitch={switchToLogin} />}
+              {currentMode === "login" && <Login onSwitch={switchToRegister} onLogin={onLogin}/>}
+              {currentMode === "register" && <Register onSwitch={switchToLogin} onRegister={onRegister}/>}
             </div>
         </div>
     )

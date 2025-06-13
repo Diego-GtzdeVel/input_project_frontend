@@ -17,7 +17,7 @@
   align-items: center;
   background-color: #3f3f3f;
   width: 440px;
-  height: 450px;
+  height: 520px;
   border-radius: 10px;
 }
 
@@ -63,8 +63,7 @@
   border: none;
   border-bottom: 2px solid rgb(255, 255, 255);
   outline: none;
-  margin-bottom: 50px;
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 }
 
 .popup__button {
@@ -78,10 +77,15 @@
   border: 2px solid #ffffff;
   border-radius: 10px;
   margin: 0;
+  margin-top: 10px;
 }
 
 .popup__button:hover {
   opacity: 80%;
+}
+
+.popup__button:disabled{
+  opacity: 50%;
 }
 
 .popup__redirect{
@@ -98,6 +102,14 @@
   font-size: 12px;
   text-decoration: none;
   padding: 0;
+}
+
+.popup__error{
+  color: #ffffff;
+  font-size: 10px;
+  padding: 0;
+  margin-top: 5px;
+  margin-bottom: 20px;
 }
 
 @media screen and (max-width: 544px) {
