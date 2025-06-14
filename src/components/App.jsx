@@ -49,13 +49,16 @@ function App() {
     }
   }, [isLoggedIn, token]);
 
-  function handleRegister({ name, email, password }) {
+  function handleRegister({ name, email, password, setError }) {
     auth.register({ name, email, password })
       .then(() => {
-        handleClosePopup();
+        setPopupMode("success");
       })
       .catch((err) => {
         console.error("Error al registrarse:", err);
+        if (setError) {
+        setError("This email is already registered");
+        }
       });
   }
 
@@ -73,7 +76,9 @@ function App() {
     })
     .catch((err) => {
       console.error("Error de autenticación:", err);
-      navigate("/");
+      if (setError) {
+        setError("Incorrect mail or password");
+        }
     });
 }
 
@@ -87,6 +92,10 @@ function App() {
 
   function handleOpenPopup(mode) {
     setPopupMode(mode);
+  }
+
+  function handleSwitchPopupMode(newMode) {
+    setPopupMode(newMode);
   }
 
   function handleClosePopup() {
@@ -103,28 +112,19 @@ function App() {
         <Route 
           path="/" 
           element={ 
-            <Main 
-            onClosePopup={handleClosePopup}
-            popupMode={popupMode}
-            /> 
+            <Main /> 
           }
         />
         <Route 
           path="/work" 
           element={ 
-            <Work 
-            onClosePopup={handleClosePopup}
-            popupMode={popupMode}
-            /> 
+            <Work  /> 
           }
         />
         <Route 
           path="/studio" 
           element={ 
-            <Studio 
-            onClosePopup={handleClosePopup}
-            popupMode={popupMode}
-            /> 
+            <Studio /> 
           }
         />
           <Route 
@@ -138,7 +138,7 @@ function App() {
       </Routes>
 
       {popupMode && (
-        <Popup mode={popupMode} onClose={handleClosePopup} onRegister={handleRegister} onLogin={handleLogin}/>
+        <Popup mode={popupMode} onClose={handleClosePopup} onSwitch={handleSwitchPopupMode} onRegister={handleRegister} onLogin={handleLogin}/>
       )}
       
       <Footer/>

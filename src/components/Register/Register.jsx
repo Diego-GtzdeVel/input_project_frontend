@@ -1,7 +1,14 @@
+import { useState } from "react";
 import { useFormWithValidation } from "../../hooks/useFormWithValidation";
 
 function Register({ onSwitch, onRegister }) {
   const { values, handleChange, errors, isValid, resetForm } = useFormWithValidation();
+  const [ registrationError, setRegistrationError ] = useState("");
+
+  const handleInputChange = (e) => {
+    if (registrationError) setRegistrationError("");
+    handleChange(e);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,6 +19,7 @@ function Register({ onSwitch, onRegister }) {
         email: values.email,
         password: values.password,
         resetForm,
+        setError: setRegistrationError,
       });
     }
   };
@@ -27,7 +35,7 @@ function Register({ onSwitch, onRegister }) {
           className="popup__input"
           required
           value={values.name || ""}
-          onChange={handleChange}
+          onChange={handleInputChange}
         />
         <span className="popup__error">{errors.name}</span>
 
@@ -39,7 +47,7 @@ function Register({ onSwitch, onRegister }) {
           className="popup__input"
           required
           value={values.email || ""}
-          onChange={handleChange}
+          onChange={handleInputChange}
         />
         <span className="popup__error">{errors.email}</span>
 
@@ -51,9 +59,15 @@ function Register({ onSwitch, onRegister }) {
           className="popup__input"
           required
           value={values.password || ""}
-          onChange={handleChange}
+          onChange={handleInputChange}
         />
         <span className="popup__error">{errors.password}</span>
+
+        {registrationError && (
+          <span className="popup__error">
+            {registrationError}
+          </span>
+        )}
 
         <button
           type="submit"
