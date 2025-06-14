@@ -1,16 +1,9 @@
-import { useState, useEffect } from "react";
 import Login from "../Login/Login";
 import Register from "../Register/Register"
 
-function Popup({ mode, onClose }) {
-  const [currentMode, setCurrentMode] = useState(mode);
-
-  useEffect(() => {
-    setCurrentMode(mode);
-  }, [mode]);
-
-  const switchToLogin = () => setCurrentMode("login");
-  const switchToRegister = () => setCurrentMode("register");
+function Popup({ mode, onClose, onSwitch, onRegister, onLogin }) {
+  const switchToLogin = () => onSwitch("login");
+  const switchToRegister = () => onSwitch("register");
     
     return (
         <div className="popup">
@@ -23,12 +16,23 @@ function Popup({ mode, onClose }) {
               >
                   <img src="../../images/closeicon.png" alt="Close Button" />
               </button>
-              <h3 className="popup__title">
-                {currentMode === "login" ? "LOGIN" : "REGISTER"}
-              </h3>
+              {mode !== "success" && (
+                <h3 className="popup__title">
+                  {mode === "login" ? "LOGIN" : "REGISTER"}
+                </h3>
+              )}
 
-              {currentMode === "login" && <Login onSwitch={switchToRegister} />}
-              {currentMode === "register" && <Register onSwitch={switchToLogin} />}
+              {mode === "login" && <Login onSwitch={switchToRegister} onLogin={onLogin}/>}
+              {mode === "register" && <Register onSwitch={switchToLogin} onRegister={onRegister}/>}
+              {mode === "success" && (
+                <div className="popup__success">
+                  <img className="popup__success-image" src="../../images/success.png" alt="" />
+                  <p className="popup__message">YOUR ACCOUNT HAS BEEN CREATED SUCCESSFULLY.</p>
+                  <button type="button" className="popup__button" onClick={switchToLogin}>
+                    CONTINUE TO LOGIN
+                  </button>
+                </div>
+              )}
             </div>
         </div>
     )
